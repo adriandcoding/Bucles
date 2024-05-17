@@ -73,53 +73,46 @@ const pacientes: Pacientes[] = [
     edad: 11,
   },
 ];
-/*Apartado 1
+
+/*APARTADO 1
 a) Queremos extraer la lista de paciente que están asignados a la especialidad de Pediatría
-
-Firma de la función:
-
+*/
 const obtenPacientesAsignadosAPediatria = (
   pacientes: Pacientes[]
-): Pacientes[] => {
-  // Tu implementación aquí :)
-};
-b) Queremos extraer la lista de pacientes asignados a Pediatría y que tengan una edad menor de 10 años.
-
+): Pacientes[] => {};
 const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
   pacientes: Pacientes[]
-): Pacientes[] => {
-  // Tu implementación aquí :)
-};
-Apartado 2
+): Pacientes[] => {};
+
+/*APARTADO 2
 Queremos activar el protocolo de urgencia si cualquier de los pacientes tiene un ritmo cardíaco superior a 100 pulsaciones por minuto y una temperatura corporal superior a 39 grados.
-
 Es decir, crear una función que devuelve true/false dependiendo si se da la condición, algo así como:
-
+*/
 const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
   let activarProctolo = false;
 
-  // Tu implementación aquí :)
-
   return activarProctolo;
 };
-Apartado 3
-El pediatra no puede atender hoy a los pacientes, queremos reasignar los pacientes asignados a la especialidad de pediatría a la de medico de familia.
 
+/*APARTADO 3
+El pediatra no puede atender hoy a los pacientes, queremos reasignar los pacientes asignados a la especialidad de pediatría a la de medico de familia.
+*/
 const reasignaPacientesAMedicoFamilia = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
   // Tu implementación aquí :)
 };
-Apartado 4
-Queremos saber si podemos mandar al Pediatra a casa (si no tiene pacientes asignados), comprobar si en la lista hay algún paciente asignado a pediatría
 
+/*APARTADO 4
+Queremos saber si podemos mandar al Pediatra a casa (si no tiene pacientes asignados), comprobar si en la lista hay algún paciente asignado a pediatría
+*/
 const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
   // Tu implementación aquí :)
 };
-Apartados opcionales
-Apartado 5
-Queremos calcular el número total de pacientes que están asignados a la especialidad de Medico de familia, y lo que están asignados a Pediatría y a cardiología
 
+/*APARTADO 5
+Queremos calcular el número total de pacientes que están asignados a la especialidad de Medico de familia, y lo que están asignados a Pediatría y a cardiología
+*/
 interface NumeroPacientesPorEspecialidad {
   medicoDeFamilia: number;
   pediatria: number;
@@ -130,5 +123,4 @@ const cuentaPacientesPorEspecialidad = (
   pacientes: Pacientes[]
 ): NumeroPacientesPorEspecialidad => {
   // Tu implementación aquí :)
-};/*
-
+};
