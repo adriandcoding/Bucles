@@ -79,10 +79,16 @@ a) Queremos extraer la lista de paciente que están asignados a la especialidad 
 */
 const obtenPacientesAsignadosAPediatria = (
   pacientes: Pacientes[]
-): Pacientes[] => {};
+): Pacientes[] => {
+    // Tu implementación aquí :)
+  return [];
+};
 const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
   pacientes: Pacientes[]
-): Pacientes[] => {};
+): Pacientes[] => {
+    // Tu implementación aquí :)
+  return [];
+};
 
 /*APARTADO 2
 Queremos activar el protocolo de urgencia si cualquier de los pacientes tiene un ritmo cardíaco superior a 100 pulsaciones por minuto y una temperatura corporal superior a 39 grados.
@@ -100,14 +106,16 @@ El pediatra no puede atender hoy a los pacientes, queremos reasignar los pacient
 const reasignaPacientesAMedicoFamilia = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
-  // Tu implementación aquí :)
+    // Tu implementación aquí :)
+    return [];
 };
 
 /*APARTADO 4
 Queremos saber si podemos mandar al Pediatra a casa (si no tiene pacientes asignados), comprobar si en la lista hay algún paciente asignado a pediatría
 */
 const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
-  // Tu implementación aquí :)
+    // Tu implementación aquí :)
+    return false;
 };
 
 /*APARTADO 5
@@ -122,5 +130,11 @@ interface NumeroPacientesPorEspecialidad {
 const cuentaPacientesPorEspecialidad = (
   pacientes: Pacientes[]
 ): NumeroPacientesPorEspecialidad => {
+    // Tu implementación aquí :)
+    return {
+      medicoDeFamilia: 0,
+      pediatria: 0,
+      cardiologia: 0,
+    };
   // Tu implementación aquí :)
 };
