@@ -112,7 +112,7 @@ Queremos activar el protocolo de urgencia si cualquiera de los pacientes tiene u
 Es decir, crear una función que devuelve true/false dependiendo si se da la condición, algo así como:
 */
 const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
-  let activarProctolo:boolean = false;;
+  let activarProctolo: boolean = false;;
   for (let i = 0; i < pacientes.length; i++) {
     if (
       pacientes[i].frecuenciaCardiaca > 100 ||
@@ -138,7 +138,7 @@ const reasignaPacientesAMedicoFamilia = (
       pacientes[i].especialidad = "Medico de familia";
     }
   }
-  
+
   return pacientes;
 };
 console.log(reasignaPacientesAMedicoFamilia(pacientes));
@@ -149,7 +149,7 @@ Queremos saber si podemos mandar al Pediatra a casa (si no tiene pacientes asign
 
 const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
   let puedeIrse: boolean = false
-  for (let i=0; i < pacientes.length; i++) {
+  for (let i = 0; i < pacientes.length; i++) {
     if (pacientes[i].especialidad === "Pediatra") {
       puedeIrse = false;
       break;
@@ -187,7 +187,7 @@ const cuentaPacientesPorEspecialidad = (
     } else if (pacientes[i].especialidad === "Cardiólogo") {
       pacientesPorEspecialidad.cardiologia++;
     }
-  
+
   }
   return pacientesPorEspecialidad;
 };
