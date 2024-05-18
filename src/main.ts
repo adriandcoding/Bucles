@@ -77,16 +77,13 @@ const pacientes: Pacientes[] = [
 /*APARTADO 1
 a) Queremos extraer la lista de paciente que están asignados a la especialidad de Pediatría
 */
-const obtenPacientesAsignadosAPediatria = (
-  pacientes: Pacientes[]
-): Pacientes[] => {
-    // Tu implementación aquí :)
+const obtenPacientesAsignadosAPediatria = (pacientes: Pacientes[]): Pacientes[] => {
   return [];
 };
-const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
-  pacientes: Pacientes[]
-): Pacientes[] => {
-    // Tu implementación aquí :)
+//b) Queremos extraer la lista de pacientes asignados a Pediatría y que tengan una edad menor de 10 años.
+
+const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (pacientes: Pacientes[]): Pacientes[] => {
+  // Tu implementación aquí :)
   return [];
 };
 
@@ -106,16 +103,16 @@ El pediatra no puede atender hoy a los pacientes, queremos reasignar los pacient
 const reasignaPacientesAMedicoFamilia = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
-    // Tu implementación aquí :)
-    return [];
+  // Tu implementación aquí :)
+  return [];
 };
 
 /*APARTADO 4
 Queremos saber si podemos mandar al Pediatra a casa (si no tiene pacientes asignados), comprobar si en la lista hay algún paciente asignado a pediatría
 */
 const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
-    // Tu implementación aquí :)
-    return false;
+  // Tu implementación aquí :)
+  return false;
 };
 
 /*APARTADO 5
@@ -130,11 +127,11 @@ interface NumeroPacientesPorEspecialidad {
 const cuentaPacientesPorEspecialidad = (
   pacientes: Pacientes[]
 ): NumeroPacientesPorEspecialidad => {
-    // Tu implementación aquí :)
-    return {
-      medicoDeFamilia: 0,
-      pediatria: 0,
-      cardiologia: 0,
-    };
+  // Tu implementación aquí :)
+  return {
+    medicoDeFamilia: 0,
+    pediatria: 0,
+    cardiologia: 0,
+  };
   // Tu implementación aquí :)
 };
