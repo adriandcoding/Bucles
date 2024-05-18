@@ -77,25 +77,55 @@ const pacientes: Pacientes[] = [
 /*APARTADO 1
 a) Queremos extraer la lista de paciente que están asignados a la especialidad de Pediatría
 */
-const obtenPacientesAsignadosAPediatria = (pacientes: Pacientes[]): Pacientes[] => {
-  return [];
+
+const obtenPacientesAsignadosAPediatria = (
+  pacientes: Pacientes[]
+): Pacientes[] => {
+  let pacientesPediatría: Pacientes[] = [];
+  for (let i = 0; i < pacientes.length; i++) {
+    if (pacientes[i].especialidad === "Pediatra") {
+      pacientesPediatría = [...pacientesPediatría, pacientes[i]];
+    }
+  }
+  return pacientesPediatría;
 };
+console.log(obtenPacientesAsignadosAPediatria(pacientes));
 //b) Queremos extraer la lista de pacientes asignados a Pediatría y que tengan una edad menor de 10 años.
 
-const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (pacientes: Pacientes[]): Pacientes[] => {
-  // Tu implementación aquí :)
-  return [];
+const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
+  pacientes: Pacientes[]
+): Pacientes[] => {
+  let pacientesPediatriaMenosDiezAños: Pacientes[] = [];
+  for (let i = 0; i < pacientes.length; i++) {
+    if (pacientes[i].especialidad === "Pediatra" && pacientes[i].edad < 10) {
+      pacientesPediatriaMenosDiezAños = [
+        ...pacientesPediatriaMenosDiezAños,
+        pacientes[i],
+      ];
+    }
+  }
+  return pacientesPediatriaMenosDiezAños;
 };
-
+console.log(obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios(pacientes));
 /*APARTADO 2
-Queremos activar el protocolo de urgencia si cualquier de los pacientes tiene un ritmo cardíaco superior a 100 pulsaciones por minuto y una temperatura corporal superior a 39 grados.
+Queremos activar el protocolo de urgencia si cualquiera de los pacientes tiene un ritmo cardíaco superior a 100 pulsaciones por minuto y una temperatura corporal superior a 39 grados.
 Es decir, crear una función que devuelve true/false dependiendo si se da la condición, algo así como:
 */
 const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
-  let activarProctolo = false;
+  let activarProctolo:boolean = false;;
+  for (let i = 0; i < pacientes.length; i++) {
+    if (
+      pacientes[i].frecuenciaCardiaca > 100 ||
+      pacientes[i].temperatura > 39
+    ) {
+      activarProctolo = true;
+      break;
+    }
+  }
 
   return activarProctolo;
 };
+console.log(activarProtocoloUrgencia(pacientes));
 
 /*APARTADO 3
 El pediatra no puede atender hoy a los pacientes, queremos reasignar los pacientes asignados a la especialidad de pediatría a la de medico de familia.
@@ -103,18 +133,35 @@ El pediatra no puede atender hoy a los pacientes, queremos reasignar los pacient
 const reasignaPacientesAMedicoFamilia = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
-  // Tu implementación aquí :)
-  return [];
+  for (let i = 0; i < pacientes.length; i++) {
+    if (pacientes[i].especialidad === "Pediatra") {
+      pacientes[i].especialidad = "Medico de familia";
+    }
+  }
+  
+  return pacientes;
 };
+console.log(reasignaPacientesAMedicoFamilia(pacientes));
 
 /*APARTADO 4
 Queremos saber si podemos mandar al Pediatra a casa (si no tiene pacientes asignados), comprobar si en la lista hay algún paciente asignado a pediatría
 */
-const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
-  // Tu implementación aquí :)
-  return false;
-};
 
+const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
+  let puedeIrse: boolean = false
+  for (let i=0; i < pacientes.length; i++) {
+    if (pacientes[i].especialidad === "Pediatra") {
+      puedeIrse = false;
+      break;
+    }
+    else {
+      puedeIrse = true;
+      break;
+    }
+  }
+  return puedeIrse;
+};
+console.log(HayPacientesDePediatria(pacientes))
 /*APARTADO 5
 Queremos calcular el número total de pacientes que están asignados a la especialidad de Medico de familia, y lo que están asignados a Pediatría y a cardiología
 */
@@ -127,11 +174,21 @@ interface NumeroPacientesPorEspecialidad {
 const cuentaPacientesPorEspecialidad = (
   pacientes: Pacientes[]
 ): NumeroPacientesPorEspecialidad => {
-  // Tu implementación aquí :)
-  return {
+  let pacientesPorEspecialidad: NumeroPacientesPorEspecialidad = {
     medicoDeFamilia: 0,
     pediatria: 0,
     cardiologia: 0,
   };
-  // Tu implementación aquí :)
+  for (let i = 0; i < pacientes.length; i++) {
+    if (pacientes[i].especialidad === "Medico de familia") {
+      pacientesPorEspecialidad.medicoDeFamilia++;
+    } else if (pacientes[i].especialidad === "Pediatra") {
+      pacientesPorEspecialidad.pediatria++;
+    } else if (pacientes[i].especialidad === "Cardiólogo") {
+      pacientesPorEspecialidad.cardiologia++;
+    }
+  
+  }
+  return pacientesPorEspecialidad;
 };
+console.log(cuentaPacientesPorEspecialidad(pacientes));
