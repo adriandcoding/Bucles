@@ -133,13 +133,16 @@ El pediatra no puede atender hoy a los pacientes, queremos reasignar los pacient
 const reasignaPacientesAMedicoFamilia = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
+  let pacientesPediatría: Pacientes[] = [];
   for (let i = 0; i < pacientes.length; i++) {
     if (pacientes[i].especialidad === "Pediatra") {
       pacientes[i].especialidad = "Medico de familia";
+      pacientesPediatría=[...pacientesPediatría,pacientes[i]];
+      
     }
   }
 
-  return pacientes;
+  return pacientesPediatría;
 };
 console.log(reasignaPacientesAMedicoFamilia(pacientes));
 
@@ -148,19 +151,15 @@ Queremos saber si podemos mandar al Pediatra a casa (si no tiene pacientes asign
 */
 
 const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
-  let puedeIrse: boolean = false
+  let hayPacientes: boolean = false;
   for (let i = 0; i < pacientes.length; i++) {
     if (pacientes[i].especialidad === "Pediatra") {
-      puedeIrse = false;
-      break;
-    }
-    else {
-      puedeIrse = true;
+      hayPacientes = true;
       break;
     }
   }
-  return puedeIrse;
-};
+  return hayPacientes;
+}
 console.log(HayPacientesDePediatria(pacientes))
 /*APARTADO 5
 Queremos calcular el número total de pacientes que están asignados a la especialidad de Medico de familia, y lo que están asignados a Pediatría y a cardiología
