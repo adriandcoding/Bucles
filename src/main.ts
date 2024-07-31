@@ -50,7 +50,7 @@ const pacientes: Pacientes[] = [
     temperatura: 36.8,
     frecuenciaCardiaca: 120,
     especialidad: "Medico de familia",
-    edad: 21,
+    edad: 22,
   },
   {
     id: 5,
