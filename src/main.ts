@@ -50,7 +50,7 @@ const pacientes: Pacientes[] = [
     temperatura: 36.8,
     frecuenciaCardiaca: 120,
     especialidad: "Medico de familia",
-    edad: 21,
+    edad: 20,
   },
   {
     id: 5,
@@ -112,7 +112,7 @@ Queremos activar el protocolo de urgencia si cualquiera de los pacientes tiene u
 Es decir, crear una función que devuelve true/false dependiendo si se da la condición, algo así como:
 */
 const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
-  let activarProctolo: boolean = false;
+  let activarProctolo: boolean = false;;
   for (let i = 0; i < pacientes.length; i++) {
     if (
       pacientes[i].frecuenciaCardiaca > 100 ||
@@ -137,7 +137,8 @@ const reasignaPacientesAMedicoFamilia = (
   for (let i = 0; i < pacientes.length; i++) {
     if (pacientes[i].especialidad === "Pediatra") {
       pacientes[i].especialidad = "Medico de familia";
-      pacientesPediatría = [...pacientesPediatría, pacientes[i]];
+      pacientesPediatría=[...pacientesPediatría,pacientes[i]];
+      
     }
   }
 
@@ -158,8 +159,8 @@ const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
     }
   }
   return hayPacientes;
-};
-console.log(HayPacientesDePediatria(pacientes));
+}
+console.log(HayPacientesDePediatria(pacientes))
 /*APARTADO 5
 Queremos calcular el número total de pacientes que están asignados a la especialidad de Medico de familia, y lo que están asignados a Pediatría y a cardiología
 */
@@ -185,6 +186,7 @@ const cuentaPacientesPorEspecialidad = (
     } else if (pacientes[i].especialidad === "Cardiólogo") {
       pacientesPorEspecialidad.cardiologia++;
     }
+
   }
   return pacientesPorEspecialidad;
 };
